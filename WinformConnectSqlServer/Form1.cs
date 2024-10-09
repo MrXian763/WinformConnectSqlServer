@@ -44,7 +44,13 @@ namespace WinformConnectSqlServer
                 return;
             }
 
-            MessageBox.Show("登录成功！");
+            // 弹出首页
+            Index index = new Index(user);
+            index.Show();
+
+            // 隐藏当前登录界面
+            this.Hide();
+
         }
 
         /// <summary>
