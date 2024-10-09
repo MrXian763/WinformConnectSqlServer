@@ -16,5 +16,19 @@ namespace WinformConnectSqlServer
         public string Password { get; set; }
         public string NickName { get; set; }
         public string Sex { get; set; }
+
+        [NotMapped]
+        public string RealSex
+        {
+            get
+            {
+                if (Sex == "1")
+                    return "男";
+                else if (Sex == "2")
+                    return "女";
+                else
+                    return "未知";
+            }
+        }
     }
 }
